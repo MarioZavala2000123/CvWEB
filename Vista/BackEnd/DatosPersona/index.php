@@ -8,57 +8,57 @@ require_once "config.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Comprobar si el nombre de usuario está vacío
-    if (empty(trim($_POST["vNombre"]))) {
+    if (empty(trim($_POST["nombre"]))) {
         $vNombre_err = "Por favor ingrese su nombre.";
     } else {
-        $vNombre = trim($_POST["vNombre"]);
+        $vNombre = trim($_POST["nombre"]);
     }
 
-    if (empty(trim($_POST["vApellido"]))) {
+    if (empty(trim($_POST["apellido"]))) {
         $vApellido_err = "Por favor ingrese su apellido.";
     } else {
-        $vApellido = trim($_POST["vApellido"]);
+        $vApellido = trim($_POST["apellido"]);
     }
 
-    if (empty(trim($_POST["vDPI"]))) {
+    if (empty(trim($_POST["dpi"]))) {
         $vDPI_err = "Por favor ingrese su documento de indentificación.";
     } else {
-        $vDPI = trim($_POST["vDPI"]);
+        $vDPI = trim($_POST["dpi"]);
         echo $vDPI;
     }
 
-    if (empty(trim($_POST["vFNacimiento"]))) {
+    if (empty(trim($_POST["fecha_Nacimiento"]))) {
         $vFNacimiento_err = "Fecha de nacimiento.";
     } else {
-        $vFNacimiento = trim($_POST["vFNacimiento"]);
+        $vFNacimiento = trim($_POST["fecha_Nacimiento"]);
         echo $vFNacimiento;
     }
 
-    if (empty(trim($_POST["vECivil"]))) {
+    if (empty(trim($_POST["estadoCivil"]))) {
         $vECiviln_err = "Por favor ingrese su estado civil.";
     } else {
-        $vECivil = trim($_POST["vECivil"]);
+        $vECivil = trim($_POST["estadoCivil"]);
         echo $vECivil;
     }
 
-    if (empty(trim($_POST["vPresentacion"]))) {
-        $vPresentacion_err = "Presentación";
-    } else {
-        $vPresentacion = trim($_POST["vPresentacion"]);
-        echo $vPresentacion;
-    }
+    // if (empty(trim($_POST["vPresentacion"]))) {
+    //     $vPresentacion_err = "Presentación";
+    // } else {
+    //     $vPresentacion = trim($_POST["vPresentacion"]);
+    //     echo $vPresentacion;
+    // }
 
-    if (empty(trim($_POST["vTelefono"]))) {
+    if (empty(trim($_POST["telefono"]))) {
         $vTelefono_err = "Número de teléfono para contacto.";
     } else {
-        $vTelefono = trim($_POST["vTelefono"]);
+        $vTelefono = trim($_POST["telefono"]);
         echo $vTelefono;
     }
 
-    if (empty(trim($_POST["vCorreo"]))) {
+    if (empty(trim($_POST["correo"]))) {
         $vCorreo_err = "Correo electrónino para contacto.";
     } else {
-        $vCorreo = trim($_POST["vCorreo"]);
+        $vCorreo = trim($_POST["correo"]);
         echo $vCorreo;
     }
 
