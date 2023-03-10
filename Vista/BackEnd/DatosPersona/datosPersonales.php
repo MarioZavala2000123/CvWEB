@@ -1,29 +1,30 @@
 <?php
 
 // Incluir archivo de configuración Otto
-require_once "config.php";
+//require_once "config.php";
 
 
 // Procesamiento de datos del formulario cuando se envía el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Comprobar si el nombre de usuario está vacío
-    if (empty(trim($_POST["nombre"]))) {
+    if (empty(trim($_POST["vNombre"]))) {
         $vNombre_err = "Por favor ingrese su nombre.";
     } else {
-        $vNombre = trim($_POST["nombre"]);
+        $vNombre = trim($_POST["vNombre"]);
+        // echo $vNombre;
     }
 
-    if (empty(trim($_POST["apellido"]))) {
+    if (empty(trim($_POST["vApellido"]))) {
         $vApellido_err = "Por favor ingrese su apellido.";
     } else {
-        $vApellido = trim($_POST["apellido"]);
+        $vApellido = trim($_POST["vApellido"]);
     }
 
-    if (empty(trim($_POST["dpi"]))) {
+    if (empty(trim($_POST["vDPI"]))) {
         $vDPI_err = "Por favor ingrese su documento de indentificación.";
     } else {
-        $vDPI = trim($_POST["dpi"]);
+        $vDPI = trim($_POST["vDPI"]);
         echo $vDPI;
     }
 
@@ -62,7 +63,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo $vCorreo;
     }
 
-    //guardarDatosPersona($username, $password);
+    // if (guardarDatosPersona($vNombre, $vApellido)){
+    //     header('Location: static.html');
+    // }else {
+    //     //mostrar mensaje de error 
+    //     header('Location: datosPersonales.html');
+    // }
 }
-
 ?>

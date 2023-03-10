@@ -18,17 +18,18 @@
                     <h2 class="title">Datos personales</h2>
                 </div>
                 <div class="card-body">
-                    <form action="../../BackEnd/DatosPersona/index.php" method="POST">
+                        <form action="datosPersonales.php" method="post">
                         <div class="form-row m-b-55">
                             <div class="name">Nombre</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="first_name">
+                                            <input class="input--style-5" type="text" name="vNombre">
                                             <label class="label--desc">Nombre</label>
                                         </div>
                                     </div>
+                                   
                                     <div class="col-2">
                                         <div class="input-group-desc">
                                             <input class="input--style-5" type="text" name="last_name">
@@ -100,7 +101,8 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit">Siguiente</button>
+                            <!-- <button class="btn btn--radius-2 btn--red" type="submit">Siguiente</button> -->
+                            <input class="btn btn--radius-2 btn--red" type="submit" value="Guardar" />
                         </div>
                     </form>
                 </div>
