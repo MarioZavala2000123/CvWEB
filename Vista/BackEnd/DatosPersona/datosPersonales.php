@@ -28,43 +28,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo $vDPI;
     }
 
-    if (empty(trim($_POST["fecha_Nacimiento"]))) {
+    if (empty(trim($_POST["vFNacimiento"]))) {
         $vFNacimiento_err = "Fecha de nacimiento.";
     } else {
-        $vFNacimiento = trim($_POST["fecha_Nacimiento"]);
+        $vFNacimiento = trim($_POST["vFNacimiento"]);
         echo $vFNacimiento;
     }
 
-    if (empty(trim($_POST["estadoCivil"]))) {
+    if (empty(trim($_POST["vECivil"]))) {
         $vECiviln_err = "Por favor ingrese su estado civil.";
     } else {
-        $vECivil = trim($_POST["estadoCivil"]);
+        $vECivil = trim($_POST["vECivil"]);
         echo $vECivil;
     }
 
-    // if (empty(trim($_POST["vPresentacion"]))) {
-    //     $vPresentacion_err = "Presentación";
-    // } else {
-    //     $vPresentacion = trim($_POST["vPresentacion"]);
-    //     echo $vPresentacion;
-    // }
+     if (empty(trim($_POST["vPresentacion"]))) {
+         $vPresentacion_err = "Presentación";
+     } else {
+         $vPresentacion = trim($_POST["vPresentacion"]);
+         echo $vPresentacion;
+     }
 
-    if (empty(trim($_POST["telefono"]))) {
+    if (empty(trim($_POST["vTelefono"]))) {
         $vTelefono_err = "Número de teléfono para contacto.";
     } else {
-        $vTelefono = trim($_POST["telefono"]);
+        $vTelefono = trim($_POST["vTelefono"]);
         echo $vTelefono;
     }
 
-    if (empty(trim($_POST["correo"]))) {
+    if (empty(trim($_POST["vCorreo"]))) {
         $vCorreo_err = "Correo electrónino para contacto.";
     } else {
-        $vCorreo = trim($_POST["correo"]);
+        $vCorreo = trim($_POST["vCorreo"]);
         echo $vCorreo;
     }
 
     // if (guardarDatosPersona($vNombre, $vApellido)){
-    //     header('Location: static.html');
+    //     header('Location: datosAcademicos.html');
     // }else {
     //     //mostrar mensaje de error 
     //     header('Location: datosPersonales.html');
