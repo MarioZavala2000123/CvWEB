@@ -60,11 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty(trim($_POST["vCorreo"]))) {
         $vCorreo_err = "Correo electrónino para contacto.";
     } else {
-        $vCorreo = trim($_POST["vCorreo"]);
+        $vCorreo = trim($_POST["vTelefono"]);
        // echo $vCorreo;
     }
 
-    // if (guardarDatosPersona($vNombre, $vApellido)){
+    // if (guardarDatosPersona($vNombre, $vApellido, $vDPI, $vFNacimiento, $vECivil, vPresentacion, $vTelefono, $vCorreo)){
     //     header('Location: datosAcademicos.html');
     // }else {
     //     //mostrar mensaje de error 
