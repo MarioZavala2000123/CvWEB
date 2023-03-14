@@ -58,10 +58,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty(trim($_POST["vTelefono"]))) {
         $vTelefono_err = "Número de teléfono para contacto.";
-    }else {
+        
+        //condicion de 8 digitos en telefono, falta mensaje de error
+    }elseif(strlen(trim($_POST["vTelefono"])) == 8){
         $vTelefono = trim($_POST["vTelefono"]);
-        // echo "vTelefono";
-        // echo $vTelefono;
+        // $vTelefono_err = "La clave al menos debe tener 6 caracteres.";
+        echo "ELSEIF vTelefono";
+         echo $vTelefono;
+    }else {
+        $vTelefono_err = "La clave al menos debe tener 8 caracteres.";
+        // $vTelefono = trim($_POST["vTelefono"]);
+        //  echo "ELSE vTelefono";
+        //  echo $vTelefono;
+        return $vTelefono;
     }
 
     if (empty(trim($_POST["vCorreo"]))) {
