@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Personales</title>
+    <link href="CSS/datosPersonales.css" rel="stylesheet">
+    <link href="CSS/main.css" rel="stylesheet">
+    <link href="CSS/main.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+</head>
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Datos personales</h2>
+                </div>
+                <div class="card-body">
+                        <form action="datosPersonales.php" method="post">
+                        <div class="form-row m-b-55">
+                            <div class="name">Nombre</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="vNombre">
+                                            <label class="label--desc">Nombre</label>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="vApellido">
+                                            <label class="label--desc">Apellido</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">DPI</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="number" name="vDPI">
+                                    <label class="label--desc">Documento Personal de Identificaci&oacute;n</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Fecha de nacimiento</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="vFNacimiento">
+                                    <label class="label--desc">d&iacute;a/mes/a&ntilde;o</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Estado Civil</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="vECivil">
+                                            <option disabled="disabled" selected="selected">Seleccionar</option>
+                                            <option>Soltero/Soltera</option>
+                                            <option>Casado/Casada</option>
+                                            <option>Divorciado/Divorciada</option>
+                                            <option>Unido</option>
+                                            <option>Viudo/Viuda</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Presentaci&oacute;n</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="vPresentacion">
+                                    <label class="label--desc">Presentaci&oacute;n o concepto de quien es</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Correo Electr&oacute;nico</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="vCorreo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Tel&eacute;fono</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="number" name="vTelefono">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <!-- <button class="btn btn--radius-2 btn--red" type="submit">Siguiente</button> -->
+                            <input class="btn btn--radius-2 btn--red" type="submit" value="Guardar" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        
+</body>
+</html>
