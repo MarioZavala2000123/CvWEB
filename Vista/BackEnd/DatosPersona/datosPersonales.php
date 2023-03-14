@@ -12,56 +12,64 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $vNombre_err = "Por favor ingrese su nombre.";
     } else {
         $vNombre = trim($_POST["vNombre"]);
-        //echo $vNombre;
+        // echo "vNombre";
+        // echo $vNombre;
     }
 
     if (empty(trim($_POST["vApellido"]))) {
         $vApellido_err = "Por favor ingrese su apellido.";
     } else {
         $vApellido = trim($_POST["vApellido"]);
-        //echo $vApellido;
+        // echo "vApellido";
+        // echo $vApellido;
     }
 
     if (empty(trim($_POST["vDPI"]))) {
         $vDPI_err = "Por favor ingrese su documento de indentificación.";
     } else {
         $vDPI = trim($_POST["vDPI"]);
-        //echo $vDPI;
+        // echo "vDPI";
+        // echo $vDPI;
     }
 
     if (empty(trim($_POST["vFNacimiento"]))) {
         $vFNacimiento_err = "Fecha de nacimiento.";
     } else {
         $vFNacimiento = trim($_POST["vFNacimiento"]);
-        //echo $vFNacimiento;
+        // echo "vFNacimiento";
+        // echo $vFNacimiento;
     }
 
     if (empty(trim($_POST["vECivil"]))) {
         $vECiviln_err = "Por favor ingrese su estado civil.";
     } else {
         $vECivil = trim($_POST["vECivil"]);
-       // echo $vECivil;
+        // echo "vECivil";
+        // echo $vECivil;
     }
 
      if (empty(trim($_POST["vPresentacion"]))) {
          $vPresentacion_err = "Presentación";
      } else {
          $vPresentacion = trim($_POST["vPresentacion"]);
-         //echo $vPresentacion;
+        //  echo "vPresentacion";
+        //  echo $vPresentacion;
      }
 
     if (empty(trim($_POST["vTelefono"]))) {
         $vTelefono_err = "Número de teléfono para contacto.";
-    } else {
+    }else {
         $vTelefono = trim($_POST["vTelefono"]);
-       // echo $vTelefono;
+        // echo "vTelefono";
+        // echo $vTelefono;
     }
 
     if (empty(trim($_POST["vCorreo"]))) {
         $vCorreo_err = "Correo electrónino para contacto.";
     } else {
-        $vCorreo = trim($_POST["vTelefono"]);
-       // echo $vCorreo;
+        $vCorreo = trim($_POST["vCorreo"]);
+        // echo "vCorreo";
+        // echo $vCorreo;
     }
 
     // if (datosPersonales($vNombre, $vApellido, $vDPI, $vFNacimiento, $vECivil, vPresentacion, $vTelefono, $vCorreo)){
@@ -71,4 +79,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //     header('Location: datosPersonales.html');
     // }
 }
-?>
