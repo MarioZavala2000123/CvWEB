@@ -13,5 +13,5 @@ $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if($link === false){
     die("ERROR: No se puede conectar a la base de datos. " . mysqli_connect_error());
 } else 
-    echo "ENTRE"
+    echo "ENTRE a la base de datos"
 ?>
