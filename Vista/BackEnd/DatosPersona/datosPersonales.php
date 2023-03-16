@@ -50,24 +50,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vECivil;
     }
 
-     if (empty(trim($_POST["vPresentacion"]))) {
-         $vPresentacion_err = "Presentación";
-     } else {
-         $vPresentacion = trim($_POST["vPresentacion"]);
+    if (empty(trim($_POST["vPresentacion"]))) {
+        $vPresentacion_err = "Presentación";
+    } else {
+        $vPresentacion = trim($_POST["vPresentacion"]);
         //  echo "vPresentacion";
         //  echo $vPresentacion;
-     }
+    }
 
     if (empty(trim($_POST["vTelefono"]))) {
         $vTelefono_err = "Número de teléfono para contacto.";
-        
+
         //condicion de 8 digitos en telefono, falta mensaje de error
-    }elseif(strlen(trim($_POST["vTelefono"])) == 8){
+    } elseif (strlen(trim($_POST["vTelefono"])) == 8) {
         $vTelefono = trim($_POST["vTelefono"]);
         // $vTelefono_err = "La clave al menos debe tener 6 caracteres.";
         // echo "ELSEIF vTelefono";
         //  echo $vTelefono;
-    }else {
+    } else {
         $vTelefono_err = "La clave al menos debe tener 8 caracteres.";
         // $vTelefono = trim($_POST["vTelefono"]);
         //  echo "ELSE vTelefono";
@@ -83,10 +83,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vCorreo;
     }
 
-     if (datosPersonales($vNombre, $vApellido, $vDPI, $vFNacimiento, $vECivil, $vPresentacion, $vTelefono, $vCorreo)){
-         header('Location: datosAcademicos.html');
-     }else {
-         //mostrar mensaje de error 
-         header('Location: datosPersonales.html');
-     }
+    if (datosPersonales($vNombre, $vApellido, $vDPI, $vFNacimiento, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
+        header('Location: datosAcademicos.html');
+    } else {
+        //mostrar mensaje de error 
+        header('Location: datosPersonales.html');
+    }
 }
