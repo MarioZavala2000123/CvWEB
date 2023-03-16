@@ -83,10 +83,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vCorreo;
     }
 
-    // if (datosPersonales($vNombre, $vApellido, $vDPI, $vFNacimiento, $vECivil, vPresentacion, $vTelefono, $vCorreo)){
-    //     header('Location: datosAcademicos.html');
-    // }else {
-    //     //mostrar mensaje de error 
-    //     header('Location: datosPersonales.html');
-    // }
+     if (datosPersonales($vNombre, $vApellido, $vDPI, $vFNacimiento, $vECivil, $vPresentacion, $vTelefono, $vCorreo)){
+         header('Location: datosAcademicos.html');
+     }else {
+         //mostrar mensaje de error 
+         header('Location: datosPersonales.html');
+     }
 }
