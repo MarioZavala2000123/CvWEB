@@ -128,6 +128,7 @@ require_once("../CvWEB/Conexion/ConexionConBasedeDatos/configs.php")
 				
 				$i = $idLaboral;
 				// Colocar while "Ponerse de acuerdo con Otto"
+				
 				//el $i lo tiene que dar el while
 				?>
 
