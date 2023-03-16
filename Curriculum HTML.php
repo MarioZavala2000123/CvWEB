@@ -1,3 +1,8 @@
+<?php
+require_once("../CvWEB/Conexion/ConexionConBasedeDatos/configs.php")
+
+?>
+
 <html>
 	<head>
 		<title> Mi Curriculum</title>
@@ -29,49 +34,31 @@
 			<table>
 				<tr>
 					<td>Nombre</td>
-					<td>Edad</td>
-					<td>Foto</td>
+					<td>Apellido</td>
 					<td>Fecha de Nacimiento</td>
+					<td>DPI</td>
 					<td>Estado civil</td>
-					<td>Presentacion</td>
+					<td>Telefono</td>
+					<td>Correo</td>
 				</tr>
 
 				<?php
 
 				// llamada a funcion para cargar datos Otto da funcion y es parecida a la de abajo
 
-				$mostrar=getDatosPersonales($idPersona);
+				$mostrar=datosPersonales($idPersona);
 						
 				?>
 
 				<tr>
 					<td><?php echo $mostrar["nombre"]?></td>
-					<td><?php echo $mostrar["edad"]?></td>
-					<td><?php echo $mostrar["fotografía"]?></td>
-					<td><?php echo $mostrar["fechadeNacimiento"]?></td>
-					<td><?php echo $mostrar["idEstadoCivil"]?></td>
-					<td><?php echo $mostrar["presentacion"]?></td>
-				</tr>
-				<?php
-				
-				?>
-			</table>
-			<table>
-				<tr>
-					<td>Telefono</td>
-					<td>Correo</td>
-				</tr>
-
-				$mostrar=getDatosPersonales($idPersona);
-
-				<tr>
+					<td><?php echo $mostrar["apellido"]?></td>
+					<td><?php echo $mostrar["fecha_Nacimiento"]?></td>
+					<td><?php echo $mostrar["dpi"]?></td>
+					<td><?php echo $mostrar["estadoCivil"]?></td>
 					<td><?php echo $mostrar["telefono"]?></td>
 					<td><?php echo $mostrar["correo"]?></td>
 				</tr>
-				<?php
-				}
-				?>
-			</table>
 		</div>
 		<div class="Parrafo">
 			&nbsp
@@ -83,7 +70,11 @@
 					<td>Estudios mayores</td>
 				</tr>
 
+				<?php
+
 				$mostrar=getDatosPersonales($idPersona);
+
+				?>
 
 				<?php // Me tengo que poer de acuerdo con otto para hacr el while ?>
 
@@ -105,7 +96,11 @@
 					<td>Idiomas</td>
 				</tr>
 
+				<?php
+
 				$mostrar=getDatosAcademicos($idPersona);
+
+				?>
 				
 				<tr>
 					<td><?php echo $mostrar["certificaciones"]?></td>
@@ -119,18 +114,38 @@
 			<H1><U>EXPERIENCIA LABORAL:</U></H1>
 			<table>
 				<tr>
-					<td>Proyectos</td>
-					<td>Habilidades</td>
-					<td>Conocimientos</td>
+					<td>Nombre de la Empresa</td>
+					<td>Tiempo Laborando</td>
+					<td>Area Laboral</td>
+					<td>Descripcion</td>
+					<td>Puesto Ocupado</td>
+					<td>Refecencia</td>
+
 				</tr>
 
-				$mostrar=getDatoLaborales($idPersona);
+				<?php				
+				$mostrar=datosLaborales($idPersona);
+				
+				$i = $idLaboral;
+				// Colocar while "Ponerse de acuerdo con Otto"
+				//el $i lo tiene que dar el while
+				?>
 
-				<tr>
-					<td><?php echo $mostrar["proyectos"]?></td>
-					<td><?php echo $mostrar["habilidades"]?></td>
-					<td><?php echo $mostrar["conocimientos"]?></td>
-				</tr>
+				<?php
+				while ($idLaboral <= $i){
+				?>
+					<tr>
+					<td><?php echo $mostrar[$i++] ["nombreEmpresa"]?></td>
+					<td><?php echo $mostrar["tiempoLaboral"]?></td>
+					<td><?php echo $mostrar["areaLaboral"]?></td>
+					<td><?php echo $mostrar["descripcionLaboral"]?></td>
+					<td><?php echo $mostrar["puestoLaboral"]?></td>
+					<td><?php echo $mostrar["referenciaLaboral"]?></td>
+					</tr>
+				<?php	
+				}
+				?>
+				
 
 			</table>
 		
