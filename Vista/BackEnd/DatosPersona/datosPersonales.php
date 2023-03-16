@@ -1,7 +1,7 @@
 <?php
 
 // Incluir archivo de configuración Otto
-//require_once "config.php";
+require_once "configs.php";
 
 
 // Procesamiento de datos del formulario cuando se envía el formulario
@@ -24,10 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vApellido;
     }
 
-    if (empty(trim($_POST["vDPI"]))) {
-        $vDPI_err = "Por favor ingrese su documento de indentificación.";
-    } else {
+    if (empty(trim($_POST["vDPI"])) == 13) {
         $vDPI = trim($_POST["vDPI"]);
+        // $vDPI_err = "Por favor ingrese su documento de indentificación.";
+    } else {
+        $vDPI_err = "Por favor ingrese su documento de indentificación.";
+        // $vDPI = trim($_POST["vDPI"]);
         // echo "vDPI";
         // echo $vDPI;
     }
@@ -63,14 +65,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }elseif(strlen(trim($_POST["vTelefono"])) == 8){
         $vTelefono = trim($_POST["vTelefono"]);
         // $vTelefono_err = "La clave al menos debe tener 6 caracteres.";
-        echo "ELSEIF vTelefono";
-         echo $vTelefono;
+        // echo "ELSEIF vTelefono";
+        //  echo $vTelefono;
     }else {
         $vTelefono_err = "La clave al menos debe tener 8 caracteres.";
         // $vTelefono = trim($_POST["vTelefono"]);
         //  echo "ELSE vTelefono";
         //  echo $vTelefono;
-        return $vTelefono;
+        // return $vTelefono;
     }
 
     if (empty(trim($_POST["vCorreo"]))) {
