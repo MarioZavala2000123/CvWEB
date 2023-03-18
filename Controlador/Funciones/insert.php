@@ -1,8 +1,8 @@
 <?php
-require_once "configs.php";
+// require_once "configs.php";
 //FUNCION PARA DATOS PERSONALES
 function datosPersonales($idPersona,$nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$telefono,$correo){
-
+    require_once "configs.php";
     if(!mysqli_connect_errno()){
             $insertar = "INSERT INTO datosPersonales(idPersona,nombre,apellido,fecha_nacimiento,dpi,estadoCivil,telefono,correo) VALUES (?,?,?,?,?,?,?,?)";
             if($stmt=mysqli_prepare($link, $insertar)){
@@ -21,7 +21,7 @@ function datosPersonales($idPersona,$nombre,$apellido,$fecha_Nacimiento,$dpi,$es
 }
 //FUNCION PARA DATOS LABORALES
 function datosLaborales($idLaboral,$nombreEmpresa,$tiempoLaboral,$areaLaboral,$descripcionLaboral,$puestoLaboral,$referenciaLaboral){
-
+    require_once "configs.php";
     if(!mysqli_connect_errno()){
             $insertar = "INSERT INTO datosPersonales(idLaboral,nombreEmpresa,tiempoLaboral,areaLaboral,descripcionLaboral,puestoLaboral,referenciaLaboral) VALUES (?,?,?,?,?,?,?)";
             if($stmt=mysqli_prepare($link, $insertar)){
