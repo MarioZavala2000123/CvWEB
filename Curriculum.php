@@ -9,7 +9,7 @@ require_once("../CvWEB/Conexion/ConexionConBasedeDatos/configs.php")
 		<link rel="stylesheet" href="css/styles.css">
 		<script src="https://kit.fontawesome.com/0ae6180350.js" crossorigin="anonymous"></script> 
 	</head>
-	<body>
+		<body>
 		<header class="encabezadoI">
 			<div class="encabezado">
 				<img src="CSS/curriculum-vitae-cartoon-icon-illustration-people-business-icon-concept-isolated-premium-flat-cartoon-style-vector.jpg" alt="acompañamiento">
