@@ -24,14 +24,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vApellido;
     }
 
-    if (empty(trim($_POST["vDPI"])) == 13) {
-        $vDPI = trim($_POST["vDPI"]);
-        // $vDPI_err = "Por favor ingrese su documento de indentificación.";
+    if (empty(trim($_POST["vDPI"]))) {
+        $vDPI_err = "Fecha de nacimiento.";
     } else {
-        $vDPI_err = "Por favor ingrese su documento de indentificación.";
-        // $vDPI = trim($_POST["vDPI"]);
-        // echo "vDPI";
-        // echo $vDPI;
+        $vDPI = trim($_POST["vDPI"]);
+        // echo "vFNacimiento";
+        // echo $vFNacimiento;
     }
 
     if (empty(trim($_POST["vFNacimiento"]))) {
