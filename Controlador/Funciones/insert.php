@@ -1,12 +1,12 @@
 <?php
-// require_once "configs.php";
+//require_once "configs.php";
 //FUNCION PARA DATOS PERSONALES
-function datosPersonales($idPersona,$nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$telefono,$correo){
-    require_once "configs.php";
+function datosPersonales($nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$telefono,$correo){
+  // require_once "configs.php";
     if(!mysqli_connect_errno()){
-            $insertar = "INSERT INTO datosPersonales(idPersona,nombre,apellido,fecha_nacimiento,dpi,estadoCivil,telefono,correo) VALUES (?,?,?,?,?,?,?,?)";
+            $insertar = "INSERT INTO datosPersonales(nombre,apellido,fecha_nacimiento,dpi,estadoCivil,telefono,correo) VALUES (?,?,?,?,?,?,?)";
             if($stmt=mysqli_prepare($link, $insertar)){
-                mysqli_stmt_bind_param($stmt, "i,s,s,s,i,i,i,s",$idPersona,$nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$telefono,$correo);
+                mysqli_stmt_bind_param($stmt, "s,s,s,i,i,i,s",$nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$telefono,$correo);
 
                 if(mysqli_stmt_execute($stmt)){
                     header("location: datosPersonales.html");

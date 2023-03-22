@@ -48,13 +48,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vECivil;
     }
 
-    if (empty(trim($_POST["vPresentacion"]))) {
-        $vPresentacion_err = "Presentación";
-    } else {
-        $vPresentacion = trim($_POST["vPresentacion"]);
-        //  echo "vPresentacion";
-        //  echo $vPresentacion;
-    }
+    // if (empty(trim($_POST["vPresentacion"]))) {
+    //     $vPresentacion_err = "Presentación";
+    // } else {
+    //     $vPresentacion = trim($_POST["vPresentacion"]);
+    //     //  echo "vPresentacion";
+    //     //  echo $vPresentacion;
+    // }
 
     if (empty(trim($_POST["vTelefono"]))) {
         $vTelefono_err = "Número de teléfono para contacto.";
@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vCorreo;
     }
 
-    if (datosPersonales($vNombre, $vApellido, $vDPI, $vFNacimiento, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
+    if (datosPersonales($vNombre, $vApellido, $vDPI, $vFNacimiento, $vECivil, $vTelefono, $vCorreo)) {
         header('Location: datosAcademicos.html');
     } else {
         //mostrar mensaje de error 
