@@ -12,21 +12,18 @@ function datosPersonales($nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$
                 mysqli_stmt_bind_param($stmt, "sssissis",$nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$presentacion,$telefono,$correo);
                 
                 if(mysqli_stmt_execute($stmt)){
-                    header("location: datosPersonales.html");
-                  
+                    header("location: datosPersonales.html"); 
                 }else{
                     echo "ALGO SALIO MAL, NO SE PUDO INGRESAR LOS DATOS";
-
                 }
-            
             //CERRAR SENTENCIA
            mysqli_stmt_close($stmt);
-            //var_dump($stmt);    
     }
     else{
         // Si mysqli_prepare() devuelve false, se ha producido un error
     echo "Error al preparar la consulta: " . mysqli_error($link);
     die();
+    
     }
     mysqli_close($link);
 
