@@ -1,7 +1,7 @@
 <?php
 
 // Incluir archivo de configuración Otto
-//require_once ("../../../Controlador/Funciones/insert.php");
+require_once ("../../../Controlador/Funciones/insert.php");
 
 
 // Procesamiento de datos del formulario cuando se envía el formulario
@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty(trim($_POST["vDPI"]))) {
-        $vDPI_err = "Fecha de nacimiento.";
+        $vDPI_err = "Documento de Identificación.";
     } else {
         $vDPI = trim($_POST["vDPI"]);
-        // echo "vFNacimiento";
-        // echo $vFNacimiento;
+        // echo "vDPI";
+        // echo $vDPI;
     }
 
     if (empty(trim($_POST["vFNacimiento"]))) {
@@ -48,13 +48,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vECivil;
     }
 
-    // if (empty(trim($_POST["vPresentacion"]))) {
-    //     $vPresentacion_err = "Presentación";
-    // } else {
-    //     $vPresentacion = trim($_POST["vPresentacion"]);
-    //     //  echo "vPresentacion";
-    //     //  echo $vPresentacion;
-    // }
+    if (empty(trim($_POST["vPresentacion"]))) {
+        $vPresentacion_err = "Presentación";
+    } else {
+        $vPresentacion = trim($_POST["vPresentacion"]);
+        //  echo "vPresentacion";
+        //  echo $vPresentacion;
+    }
 
     if (empty(trim($_POST["vTelefono"]))) {
         $vTelefono_err = "Número de teléfono para contacto.";
@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vCorreo;
     }
 
-    if (datosPersonales($vNombre, $vApellido, $vDPI, $vFNacimiento, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
+    if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
         header('Location: datosAcademicos.html');
     } else {
         //mostrar mensaje de error 
