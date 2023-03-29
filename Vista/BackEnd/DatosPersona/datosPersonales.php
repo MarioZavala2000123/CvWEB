@@ -1,9 +1,6 @@
 <?php
-
 // Incluir archivo de configuración Otto
 require_once ("../../../Controlador/Funciones/insert.php");
-
-
 // Procesamiento de datos del formulario cuando se envía el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -88,3 +85,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header('Location: datosPersonales.html');
     }
 }
+?>
