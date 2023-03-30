@@ -79,10 +79,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
-        header('Location: datosAcademicos.html');
+        header('Location: ../datosAcademicos.html');
     } else {
         //mostrar mensaje de error 
-        header('Location: datosPersonales.html');
+        //header('Location: datosPersonales.html');
     }
 }
 ?>

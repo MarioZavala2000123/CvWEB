@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="vNombre" id="validationDefault01" value="<?php echo $datosPersona['fechadeNacimiento']  ?>" required>
+                                        <input class="input--style-5" type="text" name="vApellido" id="validationDefault01" value="<?php echo $datosPersona['fechadeNacimiento']  ?>" required>
                                             <label class="label--desc">Apellido</label>
                                         </div>
                                     </div>
@@ -144,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="name">DPI</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="number" name="vDPI" id="validationDefault01"required>
+                                <input class="input--style-5" type="text" name="vDPI" id="validationDefault01" value="<?php echo $datosPersona['dpi']  ?>" required>
                                     <label class="label--desc">Documento Personal de Identificaci&oacute;n</label>
                                 </div>
                             </div>
@@ -153,8 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="name">Fecha de nacimiento</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="vFNacimiento"
-                                        id="validationDefault01" required>
+                                <input class="input--style-5" type="text" name="vFNacimiento" id="validationDefault01" value="<?php echo $datosPersona['fecha_Nacimiento']  ?>" required>
                                     <label class="label--desc">d&iacute;a/mes/a&ntilde;o</label>
                                 </div>
                             </div>
@@ -165,7 +164,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <div class="input-group">
                                     <div class="col-md-3">
                                         <label for="validationDefault04" class="form-label"></label>
-                                        <select name="vECivil" class="form-select" id="validationDefault04" required>
+                                        <select name="vECivil" class="form-select" id="validationDefault04" value="<?php echo $datosPersona['estadoCivil']  ?>" required>
                                             <option selected disabled value="">Seleccionar</option>
                                             <option>Soltero/Soltera</option>
                                             <option>Casado/Casada</option>
@@ -181,7 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="name">Presentaci&oacute;n</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="vPresentacion">
+                                    <input class="input--style-5" type="text" name="vPresentacion" value="<?php echo $datosPersona['presentacion']  ?>">
                                     <label class="label--desc">Presentaci&oacute;n o concepto de quien es</label>
                                 </div>
                             </div>
@@ -190,8 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="name">Correo Electr&oacute;nico</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="vCorreo" id="validationDefault01"
-                                        required>
+                                    <input class="input--style-5" type="text" name="vCorreo" id="validationDefault01" value="<?php echo $datosPersona['correo']  ?>" required>
                                 </div>
                             </div>
                         </div>
@@ -199,8 +197,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="name">Tel&eacute;fono</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="number" name="vTelefono"
-                                        id="validationDefault01" required>
+                                    <input class="input--style-5" type="number" name="vTelefono" id="validationDefault01" value="<?php echo $datosPersona['telefono']  ?>" required>
                                 </div>
                             </div>
                         </div>

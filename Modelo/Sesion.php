@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         }else{
             $_SESSION['idPersona']= $idPersona;
             header('Location: ../Vista/BackEnd/DatosPersona/DatosPersonalesEdit.php');
-
         }
     } else {
         header('Location: ../Vista/FrondEnd/Login.html');
