@@ -1,4 +1,6 @@
 <?php
+//verificacion de datos y hacer un get
+// Incluir archivo de configuración Otto
 require_once ("../../../Controlador/Funciones/insert.php");
 //Campos del DB
 //$datosPersona=getDatosPersona($_SESSION['idPersona']);
@@ -10,9 +12,11 @@ require_once ("../../../Controlador/Funciones/insert.php");
     //echo $datosPersona['Nombre'];
 ?>
 <?php
+//Actualizar datos y enviarlos
 // Incluir archivo de configuración Otto
 require_once ("../../../Controlador/Funciones/insert.php");
 // Procesamiento de datos del formulario cuando se envía el formulario
+//Para modificar se puede utilizar el metodo "PUT"
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Comprobar si el nombre de usuario está vacío
@@ -119,7 +123,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h2 class="title">Datos personales</h2>
                 </div>
                 <div class="card-body">
-                    <form action="datosPersonales.php" method="post">
+                    <form action="datosPersonalesEdit.php" method="post">
                         <div class="form-row m-b-55">
                             <div class="name">Nombre</div>
                             <div class="value">
