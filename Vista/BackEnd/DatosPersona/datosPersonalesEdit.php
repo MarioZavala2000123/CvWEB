@@ -1,21 +1,33 @@
 <?php
 //verificacion de datos y hacer un get
+session_start();
 // Incluir archivo de configuración Otto
 require_once ("../../../Controlador/Funciones/insert.php");
 //Campos del DB
 //$datosPersona=getDatosPersona($_SESSION['idPersona']);
- //ejemplo
+    //ejemplo
     // $datosPersona = [
-    //     "Nombre" => "Carlos",
-    //     "Telefono" => "45678925",
+    //     "nombre" => "Daniel",
+    //     "apellido" => "Guerra",
+    //     "fecha_nacimiento" => "04/04/1998",
+    //     "dpi" => "4567891230456",
+    //     "estadoCivil" => "Soltero/Soltera",
+    //     "presentacion" => "Presentacion de Daniel",
+    //     "telefono" => "45678925",
+    //     "correo" => "danielgerr@gmail.com",
     // ];
-    //echo $datosPersona['Nombre'];
+    //echo $datosPersona['nombre'];
 ?>
 <?php
 //Actualizar datos y enviarlos
 // Incluir archivo de configuración Otto
 require_once ("../../../Controlador/Funciones/insert.php");
 // Procesamiento de datos del formulario cuando se envía el formulario
+//Validar si preciona el boton guardar
+if (isset($_POST['modificar'])) {
+    //recuperar los datos que se encuentran en cada uno de los imputs
+    $idUsuario= $_POST['id'];
+}
 //Para modificar se puede utilizar el metodo "PUT"
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -102,9 +114,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -114,7 +126,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="CSS/main.css" rel="stylesheet">
     <link href="CSS/main.min.css" rel="stylesheet">
 </head>
-
 <body>
     <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
@@ -131,13 +142,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <div class="col-2">
                                         <div class="input-group-desc">
                                             <!-- agregar los campos de la tabla del DB-->
+                                            <input type="hidden" name="id" value="<?php echo $datosPersona['nombre']  ?>">
                                             <input class="input--style-5" type="text" name="vNombre" id="validationDefault01" value="<?php echo $datosPersona['nombre']  ?>" required>
                                             <label class="label--desc">Nombre</label>
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="vApellido" id="validationDefault01" value="<?php echo $datosPersona['fechadeNacimiento']  ?>" required>
+                                        <input class="input--style-5" type="text" name="vApellido" id="validationDefault01" value="<?php echo $datosPersona['apellido']  ?>" required>
                                             <label class="label--desc">Apellido</label>
                                         </div>
                                     </div>
@@ -157,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="name">Fecha de nacimiento</div>
                             <div class="value">
                                 <div class="input-group">
-                                <input class="input--style-5" type="text" name="vFNacimiento" id="validationDefault01" value="<?php echo $datosPersona['fecha_Nacimiento']  ?>" required>
+                                <input class="input--style-5" type="text" name="vFNacimiento" id="validationDefault01" value="<?php echo $datosPersona['fecha_nacimiento']  ?>" required>
                                     <label class="label--desc">d&iacute;a/mes/a&ntilde;o</label>
                                 </div>
                             </div>
@@ -206,7 +218,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </div>
                         <div>
-                            <input class="btn btn--radius-2 btn--red" type="submit" value="Guardar" />
+                            <input name="modificar" class="btn btn--radius-2 btn--red" type="submit" value="Guardar" />
                         </div>
                     </form>
                 </div>
@@ -214,5 +226,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </body>
-
 </html>

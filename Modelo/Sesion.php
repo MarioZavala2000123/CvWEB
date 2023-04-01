@@ -1,8 +1,7 @@
 <?php
-require_once ("../../../Controlador/Funciones/insert.php");
+require_once ("../Controlador/Funciones/insert.php");
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (trim($_GET["idUsuario"])) {
-        session_start();
         $_SESSION['idUsuario']=$_GET["idUsuario"];
         // echo $_SESSION['idUsuario'];
         //Get de los datospersonales, agregar funcion Otto
