@@ -5,12 +5,12 @@ function datosPersonales($nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$
     $link = mysqli_connect("localhost", "root", "", "prueba");
 
     if(!mysqli_connect_errno()){
-       // $idUsuario=$_SESSION("idUsuario"); son corchetes 
+        $idUsuario=$_SESSION("idUsuario"); //son corchetes 
 
             $insertar = "INSERT INTO datosPersonales(idUsuario,nombre,apellido,fecha_nacimiento,dpi,estadoCivil,presentacion,telefono,correo) VALUES (?,?,?,?,?,?,?,?)";
             $stmt = mysqli_prepare($link, $insertar);   
             
-                mysqli_stmt_bind_param($stmt, "isssissis",$nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$presentacion,$telefono,$correo);
+                mysqli_stmt_bind_param($stmt, "isssissis",$idUsuario,$nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$presentacion,$telefono,$correo);
                 
                 
                 if(mysqli_stmt_execute($stmt)){
@@ -33,7 +33,7 @@ function datosPersonales($nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$
     }
     mysqli_close($link);
     return $return;
-    
+
 }
 
 
