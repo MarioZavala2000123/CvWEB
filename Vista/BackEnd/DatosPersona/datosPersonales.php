@@ -1,7 +1,8 @@
 <?php
 // Incluir archivo de configuración Otto
-require_once ("../../../Controlador/Funciones/insert.php");
-require_once ("../../../Modelo/Sesion.php");
+require_once ("../../../Controlador/Funciones-Conexion/insert-conexion.php");
+//require_once ("../../../Modelo/Sesion.php");
+
 // Procesamiento de datos del formulario cuando se envía el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -53,22 +54,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //  echo "vPresentacion";
         //  echo $vPresentacion;
     }
-
-    if (empty(trim($_POST["vTelefono"]))) {
+    
+    if (empty(($_POST["vTelefono"]))) {
         $vTelefono_err = "Número de teléfono para contacto.";
-
         //condicion de 8 digitos en telefono, falta mensaje de error
-    } elseif (strlen(trim($_POST["vTelefono"])) == 8) {
-        $vTelefono = trim($_POST["vTelefono"]);
-        // $vTelefono_err = "La clave al menos debe tener 6 caracteres.";
-        // echo "ELSEIF vTelefono";
-        //  echo $vTelefono;
     } else {
-        $vTelefono_err = "La clave al menos debe tener 8 caracteres.";
-        // $vTelefono = trim($_POST["vTelefono"]);
-        //  echo "ELSE vTelefono";
-        //  echo $vTelefono;
-        // return $vTelefono;
+            $vTelefono = trim($_POST["vTelefono"]);
     }
 
     if (empty(trim($_POST["vCorreo"]))) {
@@ -80,11 +71,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
-        header('Location: ../datosAcademicos.html');
+        echo "ENTRO";
+        //header('Location: ../datosAcademicos.html');
     } else {
         //mostrar mensaje de error 
-        // echo "Error php";
-        header('Location: datosPersonales.html');
+        echo "Error php";
+       // header('Location: datosPersonales.html');
     }
 }
 ?>
