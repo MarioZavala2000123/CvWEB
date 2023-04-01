@@ -2,7 +2,6 @@
 // Incluir archivo de configuración Otto
 require_once ("../../../Controlador/Funciones/insert.php");
 require_once ("../../../Modelo/Sesion.php");
-$idUsuario = $_SESSION['idUsuario'];
 // Procesamiento de datos del formulario cuando se envía el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -80,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vCorreo;
     }
 
-    if (datosPersonales($idUsuario, $vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
+    if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
         header('Location: ../datosAcademicos.html');
     } else {
         //mostrar mensaje de error 
