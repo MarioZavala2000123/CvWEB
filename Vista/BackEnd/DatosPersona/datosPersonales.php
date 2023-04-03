@@ -25,11 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty(trim($_POST["vDPI"]))) {
-        $vDPI_err = "Fecha de nacimiento.";
+        $vDPI_err = "Documento de Identificación.";
     } else {
         $vDPI = trim($_POST["vDPI"]);
-        // echo "vFNacimiento";
-        // echo $vFNacimiento;
+        // echo "vDPI";
+        // echo $vDPI;
     }
 
     if (empty(trim($_POST["vFNacimiento"]))) {
@@ -81,10 +81,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vCorreo;
     }
 
-    if (datosPersonales($vNombre, $vApellido, $vFNacimiento,$vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
+    if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
         header('Location: datosAcademicos.html');
     } else {
         //mostrar mensaje de error 
         header('Location: datosPersonales.html');
     }
 }
+
+?>
