@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    if (Login($$vCorreoRegistro, $$vContraseñaRegistro)){
+    if (Login($vCorreoRegistro, $$vContraseñaRegistro)){
         header('Location: Login.html');
     } else {
         //Mostrar mensaje de error
