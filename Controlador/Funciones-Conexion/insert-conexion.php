@@ -2,7 +2,7 @@
 //require_once "configs.php";
 //FUNCION PARA DATOS PERSONALES
 function datosPersonales($nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$presentacion,$telefono,$correo){
-    $link = mysqli_connect("localhost", "root", "", "prueba");
+    $link = mysqli_connect("localhost", "root", "", "proyectocv");
 
     if(!mysqli_connect_errno()){
        // $idUsuario=$_SESSION("idUsuario"); //son corchetes 
