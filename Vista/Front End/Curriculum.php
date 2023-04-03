@@ -1,5 +1,6 @@
 <?php
 
+require_once("../../Controlador/Funciones-Conexion/insert-conexion.php");
 
 ?>
 
@@ -17,17 +18,13 @@
 				<a href="javascript:window.print()"><button class="imprimir">Imprimir</button></a>
 			</div>
 			
-			<div>
-  			
+			<div  class="desplegable">  			
 				<button class="imprimir" >Editar</button>
-				<div>
-
-					<a class"links" href="../BackEnd/DatosPersona/datosPersonalesEdit.php">Datos Personales</a>
-					<a class"links" href="#">Datos Academicos</a>
-					<a class"links" href="#">Datos Laborales</a>
-
+				<div class="Links1">
+					<a href="../BackEnd/DatosPersona/datosPersonalesEdit.php">Datos Personales</a>
+					<a href="#">Datos Academicos</a>
+					<a href="#">Datos Laborales</a>
 				</div>
-
 			</div>
 
 		</header>
