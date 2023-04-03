@@ -11,51 +11,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $vNombre_err = "Por favor ingrese su nombre.";
     } else {
         $vNombre = trim($_POST["vNombre"]);
-        // echo "vNombre";
-        // echo $vNombre;
     }
 
     if (empty(trim($_POST["vApellido"]))) {
         $vApellido_err = "Por favor ingrese su apellido.";
     } else {
         $vApellido = trim($_POST["vApellido"]);
-        // echo "vApellido";
-        // echo $vApellido;
     }
 
     if (empty(trim($_POST["vDPI"]))) {
         $vDPI_err = "Documento de Identificación.";
     } else {
         $vDPI = trim($_POST["vDPI"]);
-        // echo "vDPI";
-        // echo $vDPI;
     }
 
     if (empty(trim($_POST["vFNacimiento"]))) {
         $vFNacimiento_err = "Fecha de nacimiento.";
     } else {
         $vFNacimiento = trim($_POST["vFNacimiento"]);
-        // echo "vFNacimiento";
-        // echo $vFNacimiento;
     }
 
     if (empty(trim($_POST["vECivil"]))) {
         $vECiviln_err = "Por favor ingrese su estado civil.";
     } else {
         $vECivil = trim($_POST["vECivil"]);
-        // echo "vECivil";
-        // echo $vECivil;
     }
 
     if (empty(trim($_POST["vPresentacion"]))) {
         $vPresentacion_err = "Presentación";
     } else {
         $vPresentacion = trim($_POST["vPresentacion"]);
-        //  echo "vPresentacion";
-        //  echo $vPresentacion;
     }
     
-    if (empty(($_POST["vTelefono"]))) {
+    if (!empty(($_POST["vTelefono"]))) {
         $vTelefono_err = "Número de teléfono para contacto.";
         //condicion de 8 digitos en telefono, falta mensaje de error
     } else {
@@ -71,11 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
-        echo "ENTRO";
-        //header('Location: ../datosAcademicos.html');
+        //header('Location: ../DatosLaborales/datosLaborales.html');
     } else {
-        //mostrar mensaje de error 
-        echo "Error php";
        // header('Location: datosPersonales.html');
     }
 }
