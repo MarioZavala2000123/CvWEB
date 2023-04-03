@@ -1,5 +1,5 @@
 <?php
-require_once("../CvWEB/Conexion/ConexionConBasedeDatos/configs.php")
+
 
 ?>
 
@@ -16,6 +16,20 @@ require_once("../CvWEB/Conexion/ConexionConBasedeDatos/configs.php")
 				<H1><B>Tu informacion</B></H1>
 				<a href="javascript:window.print()"><button class="imprimir">Imprimir</button></a>
 			</div>
+			
+			<div>
+  			
+				<button class="imprimir" >Editar</button>
+				<div>
+
+					<a class"links" href="../BackEnd/DatosPersona/datosPersonalesEdit.php">Datos Personales</a>
+					<a class"links" href="#">Datos Academicos</a>
+					<a class"links" href="#">Datos Laborales</a>
+
+				</div>
+
+			</div>
+
 		</header>
 		
 	<div class="contenedor">
