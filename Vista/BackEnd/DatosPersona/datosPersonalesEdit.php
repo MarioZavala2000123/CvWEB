@@ -1,8 +1,10 @@
 <?php
+//Actualizar datos y enviarlos
 //verificacion de datos y hacer un get
 session_start();
 // Incluir archivo de configuración Otto
 require_once ("../../../Controlador/Funciones/insert.php");
+// Procesamiento de datos del formulario cuando se envía el formulario
 //Campos del DB
 //$datosPersona=getDatosPersona($_SESSION['idPersona']);
     //ejemplo
@@ -17,12 +19,6 @@ require_once ("../../../Controlador/Funciones/insert.php");
     //     "correo" => "danielgerr@gmail.com",
     // ];
     //echo $datosPersona['nombre'];
-?>
-<?php
-//Actualizar datos y enviarlos
-// Incluir archivo de configuración Otto
-require_once ("../../../Controlador/Funciones/insert.php");
-// Procesamiento de datos del formulario cuando se envía el formulario
 //Validar si preciona el boton guardar
 if (isset($_POST['modificar'])) {
     //recuperar los datos que se encuentran en cada uno de los imputs
@@ -218,7 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </div>
                         <div>
-                            <input name="modificar" class="btn btn--radius-2 btn--red" type="submit" value="Guardar" />
+                            <input name="modificar" class="btn btn--radius-2 btn--blue" type="submit" value="Guardar" />
                         </div>
                     </form>
                 </div>
