@@ -43,11 +43,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $vPresentacion = trim($_POST["vPresentacion"]);
     }
     
-    if (!empty(($_POST["vTelefono"]))) {
-        $vTelefono_err = "Número de teléfono para contacto.";
-        //condicion de 8 digitos en telefono, falta mensaje de error
-    } else {
-            $vTelefono = trim($_POST["vTelefono"]);
+    // Repetir hasta que el campo "telefono" tenga 8 dígitos
+    while (true) {
+        // Validar si el campo "telefono" tiene exactamente 8 dígitos
+        if (preg_match('/^\d{8}$/', $_POST["vTelefono"])) {
+        // Si el campo "telefono" tiene 8 dígitos, salir del ciclo
+        $vTelefono = trim($_POST["vTelefono"]);
+        break;
+        } else {
+        // Si el campo "telefono" no tiene 8 dígitos, mostrar alerta y volver al formulario
+        echo "<script>alert('Ingrese un número teléfonico valido, debe de tener 8 digitos'); window.history.back();</script>";
+        exit();
+        }
     }
 
     if (empty(trim($_POST["vCorreo"]))) {
@@ -59,9 +66,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
-        //header('Location: ../DatosLaborales/datosLaborales.html');
+        header('Location: ../DatosLaborales/Datoslaborales.html');
     } else {
-       // header('Location: datosPersonales.html');
+        header('Location: datosPersonales.html');
     }
 }
 ?>
