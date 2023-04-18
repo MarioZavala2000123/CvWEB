@@ -2,11 +2,12 @@
 //Actualizar datos y enviarlos
 //verificacion de datos y hacer un get
 session_start();
-// Incluir archivo de configuración Otto
-require_once ("../../../Controlador/Funciones/insert.php");
+// Incluir archivo de configuración de conexion
+require_once ("../../../Controlador/Funciones-Conexion/insert-conexion.php");
 // Procesamiento de datos del formulario cuando se envía el formulario
-//Campos del DB
+    //Funcion de llamada a la capa de controlador
 //$datosPersona=getDatosPersona($_SESSION['idPersona']);
+//Campos del DB
     //ejemplo
     // $datosPersona = [
     //     "nombre" => "Daniel",
@@ -19,11 +20,6 @@ require_once ("../../../Controlador/Funciones/insert.php");
     //     "correo" => "danielgerr@gmail.com",
     // ];
     //echo $datosPersona['nombre'];
-//Validar si preciona el boton guardar
-if (isset($_POST['modificar'])) {
-    //recuperar los datos que se encuentran en cada uno de los imputs
-    $idUsuario= $_POST['id'];
-}
 //Para modificar se puede utilizar el metodo "PUT"
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -76,21 +72,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //  echo $vPresentacion;
     }
 
-    if (empty(trim($_POST["vTelefono"]))) {
-        $vTelefono_err = "Número de teléfono para contacto.";
-
-        //condicion de 8 digitos en telefono, falta mensaje de error
-    } elseif (strlen(trim($_POST["vTelefono"])) == 8) {
+    // Repetir hasta que el campo "telefono" tenga 8 dígitos
+    while (true) {
+        // Validar si el campo "telefono" tiene exactamente 8 dígitos
+        if (preg_match('/^\d{8}$/', $_POST["vTelefono"])) {
+        // Si el campo "telefono" tiene 8 dígitos, salir del ciclo
         $vTelefono = trim($_POST["vTelefono"]);
-        // $vTelefono_err = "La clave al menos debe tener 6 caracteres.";
-        // echo "ELSEIF vTelefono";
-        //  echo $vTelefono;
-    } else {
-        $vTelefono_err = "La clave al menos debe tener 8 caracteres.";
-        // $vTelefono = trim($_POST["vTelefono"]);
-        //  echo "ELSE vTelefono";
-        //  echo $vTelefono;
-        // return $vTelefono;
+        break;
+        } else {
+        // Si el campo "telefono" no tiene 8 dígitos, mostrar alerta y volver al formulario
+        echo "<script>alert('Ingrese un número teléfonico valido, debe de tener 8 digitos'); window.history.back();</script>";
+        exit();
+        }
     }
 
     if (empty(trim($_POST["vCorreo"]))) {
@@ -100,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo "vCorreo";
         // echo $vCorreo;
     }
-//datos edit
+    //datos edit, llamada a la funcion para update
     // if (datosPersonalesEdit($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
     //     header('Location: datosAcademicos.html');
     // } else {
