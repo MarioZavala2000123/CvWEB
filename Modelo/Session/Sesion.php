@@ -1,5 +1,5 @@
 <?php
-require_once ("../Controlador/Funciones/insert.php");
+require_once ("../../Controlador/Funciones-Conexion/GetUsuario.php");
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (trim($_GET["idUsuario"])) {
         session_start();

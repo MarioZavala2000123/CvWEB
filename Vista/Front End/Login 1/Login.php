@@ -26,11 +26,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vContraseñaLogin;
     }
 
+    $idUsuario = consultaUsuario($vCorreoLogin, $vContraseñaLogin);
 
-    if (Login($vCorreoLogin, $vContraseñaLogin)){
-        header('Location: Login.html');
-    } else {
+        if ($idUsuario>0){
+        header('Location: ../../../../../Modelo/Session/Sesion.php?idUsuario-' .$idUsuario);
+        //echo $idUsuario;
+        } 
+        else {
         //Mostrar mensaje de error
+        //echo "no hizo nada";
         header('Location: Login.php') 
     }
 }

@@ -144,15 +144,17 @@ require_once("../../Controlador/Funciones-Conexion/insert-conexion.php");
 				?>
 
 				<?php
-				while ($idLaboral <= $i){
+				while ($i < count($idPersona)){
 				?>
 					<tr>
 					<td><?php echo $mostrar[$i++] ["nombreEmpresa"]?></td>
-					<td><?php echo $mostrar["tiempoLaboral"]?></td>
-					<td><?php echo $mostrar["areaLaboral"]?></td>
-					<td><?php echo $mostrar["descripcionLaboral"]?></td>
-					<td><?php echo $mostrar["puestoLaboral"]?></td>
-					<td><?php echo $mostrar["referenciaLaboral"]?></td>
+					<td><?php echo $mostrar["estado"]?></td>
+					<td><?php echo $mostrar["puesto"]?></td>
+					<td><?php echo $mostrar["area"]?></td>
+					<td><?php echo $mostrar["tiempoInicial"]?></td>
+					<td><?php echo $mostrar["tiempoFinal"]?></td>
+					<td><?php echo $mostrar["referencia"]?></td>
+					<td><?php echo $mostrar["resu"]?></td>
 					</tr>
 				<?php	
 				}
