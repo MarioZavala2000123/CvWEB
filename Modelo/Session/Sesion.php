@@ -10,12 +10,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         //Get de los datosLaborales, agregar funcion Otto
         //$Session=getidPersona($_SESSION['idUsuario']);
         if(empty($Session)){
-            header('Location: ../Vista/BackEnd/DatosPersona/DatosPersonales.html');
+            header('Location: ../../../../Vista/BackEnd/DatosPersona/datosPersonales.html');
         }else{
-            header('Location: ../Vista/BackEnd/DatosPersona/DatosPersonalesEdit.php');
+            header('Location: ../../../../Vista/BackEnd/DatosPersona/datosPersonales.php');
         }
     } else {
-        header('Location: ../Vista/FrondEnd/Login.html');
+        header('Location: ../../../../Vista/Front End/Login 1/Login.html');
     }
 }
 
