@@ -1,7 +1,7 @@
 <?php
 
 // Tengo que incluir el archivo de otto
-require_once("../../../../Controlador/Funciones-Conexion/GetUsuario.php");
+require_once("../../../Controlador/Funciones-Conexion/GetUsuario.php");
 
 // Proceso de datos cunado se envian
 
@@ -12,21 +12,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $vCorreoRegistro_err = "Porfavor ingrese su Correo";
     
     } else {
-        $vCorreoRegistro = trim($_POST[$vCorreoRegistro]);
-         //echo "vCorreoRegistro";
-         //echo $vCorreoRegistro;
+        $vCorreoRegistro = trim($_POST["vCorreoRegistro"]);
+         echo "vCorreoRegistro ";
+         echo $vCorreoRegistro;
     }
 
     if(empty(trim($_POST["vContraseñaRegistro"]))) {
         $vContraseñaRegistro_err = "Porfavor ingrese su Contraseña";
     
     } else {
-        $vContraseñaRegistro = trim($_POST[$vContraseñaRegistro]);
-         //echo "vContraseñaRegistro";
-         //echo $vContraseñaRegistro;
+        $vContraseñaRegistro = trim($_POST["vContraseñaRegistro"]);
+         echo "vContraseñaRegistro ";
+         echo $vContraseñaRegistro;
     }
     if(Usuario($vCorreoRegistro,$vContraseñaRegistro)){
-        header('Location: ../../../BackEnd/DatosPersona/datosPersonales.html');
+        header('Location: Login.html');
         echo "Entro al IF";
     } else {
         ECHO "NO ENTRO AL IF";

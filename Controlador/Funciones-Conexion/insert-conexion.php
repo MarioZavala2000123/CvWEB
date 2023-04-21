@@ -5,15 +5,15 @@ function datosPersonales($nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$
     $link = mysqli_connect("localhost", "root", "", "prueba");
 
     if(!mysqli_connect_errno()){
-       // $idUsuario=$_SESSION("idUsuario"); //son corchetes 
+        $idUsuario=$_SESSION["idUsuario"]; //son corchetes 
 
-            $insertar = "INSERT INTO datosPersonales(nombre,apellido,fecha_nacimiento,dpi,estadoCivil,presentacion,telefono,correo) VALUES (?,?,?,?,?,?,?,?)";
+            $insertar = "INSERT INTO datosPersonales(idUsuario,nombre,apellido,fecha_Nacimiento,dpi,estadoCivil,presentacion,telefono,correo) VALUES (?,?,?,?,?,?,?,?,?)";
             $stmt = mysqli_prepare($link, $insertar);   
             
-                mysqli_stmt_bind_param($stmt, "sssissis",$nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$presentacion,$telefono,$correo);
+                mysqli_stmt_bind_param($stmt, "isssissis",$idUsuario,$nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$presentacion,$telefono,$correo);
                     
                     
-                if(mysqli_stmt_execute($stmt)){
+                if(mysqli_stmt_execute($stmt)){ 
                     //header("location: datosPersonales.html");
                     $return = TRUE;
                     
@@ -35,16 +35,16 @@ function datosPersonales($nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$
 
 }
 
-function datosLaborales($estado,$nombreEmpresa,$puesto,$area,$tiempoInicial,$tiempoFinal,$referencia,$resu){
+function datosLaborales($estado,$nombreEmpresa,$area,$puesto,$tiempoInicial,$tiempoFinal,$resumen,$referencia){
     $links = mysqli_connect("localhost", "root", "", "prueba");
 
     if(!mysqli_connect_errno()){
        // $idUsuario=$_SESSION("idUsuario"); //son corchetes 
 
-            $insertar = "INSERT INTO datosPersonales(estado,nombreEmpresa,puesto,area,tiempoInicial,tiempoFinal,referencia,resumen) VALUES (?,?,?,?,?,?,?,?)";
-            $stmt = mysqli_prepare($links, $insertar);   
+            $inserta = "INSERT INTO datosPersonales(estado,nombreEmpresa,area,puesto,tiempoInicial,tiempoFinal,resumen,referencia) VALUES (?,?,?,?,?,?,?,?)";
+            $stmt = mysqli_prepare($links, $inserta);   
             
-                mysqli_stmt_bind_param($stmt, "ssssssss",$estado,$nombreEmpresa,$puesto,$area,$tiempoInicial,$tiempoFinal,$referencia,$resumen);
+                mysqli_stmt_bind_param($stmt, "ssssssss",$estado,$nombreEmpresa,$area,$puesto,$tiempoInicial,$tiempoFinal,$resumen,$referencia);
                     
                     
                 if(mysqli_stmt_execute($stmt)){

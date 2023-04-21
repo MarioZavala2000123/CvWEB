@@ -1,3 +1,104 @@
+<?php
+//verificacion de datos y hacer un get
+session_start();
+// Incluir archivo de configuración Otto
+require_once ("../../../Controlador/Funciones/insert.php");
+//Campos del DB
+//$datosPersona=getDatosPersona($_SESSION['idPersona']);
+    //ejemplo
+    // $datosPersona = [
+    //     "nombre" => "Daniel",
+    //     "apellido" => "Guerra",
+    //     "fecha_nacimiento" => "04/04/1998",
+    //     "dpi" => "4567891230456",
+    //     "estadoCivil" => "Soltero/Soltera",
+    //     "presentacion" => "Presentacion de Daniel",
+    //     "telefono" => "45678925",
+    //     "correo" => "danielgerr@gmail.com",
+    // ];
+    //echo $datosPersona['nombre'];
+?>
+<?php
+//Actualizar datos y enviarlos
+// Incluir archivo de configuración Otto
+require_once ("../../../Controlador/Funciones/insert.php");
+// Procesamiento de datos del formulario cuando se envía el formulario
+//Validar si preciona el boton guardar
+if (isset($_POST['modificar'])) {
+    //recuperar los datos que se encuentran en cada uno de los imputs
+    $idUsuario= $_POST['id'];
+}
+//Para modificar se puede utilizar el metodo "PUT"
+if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
+
+
+    // Comprobar si el nombre de usuario está vacío
+    if (empty(trim($_POST["LEstado"]))) {
+        $LEstado_err = "LEstado";
+       } else {
+          $LEstado = trim($_POST["LEstado"]);
+          // echo $LEstado;
+       }
+  
+    if (empty(trim($_POST["LNombre"]))) {
+        $LNombre_err = "Por favor ingrese el nombre de la empresa.";
+    } else {
+        $LNombre = trim($_POST["LNombre"]);
+        //echo("<script>console.log('Nombre: ".$LNombre."');</script>");
+        // echo $LNombre;
+    }
+    if (empty(trim($_POST["LArea"]))) {
+        $LArea_err = "Por favor ingresar el area del trabajo.";
+    } else {
+        $LArea = trim($_POST["LArea"]);
+        // echo $LArea;
+    }
+
+    if (empty(trim($_POST["LPuesto"]))) {
+        $LPuesto_err = "Por favor ingrese su Puesto.";
+    } else {
+        $LPuesto = trim($_POST["LPuesto"]);
+        // echo $LPuesto;
+    }
+     
+    if (empty(trim($_POST["LTiempoInicial"]))){
+        $LTiempoInicial_err = "Por favor ingrese el tiempo inicial.";
+    } else {
+        $LTiempoInicial = trim($_POST["LTiempoInicial"]);
+    }
+
+   if (empty(trim($_POST["LTiempoFinal"]))) {
+        $LTiempoFinal_err = "Por favor ingrese el tiempo final.";
+    } else {
+        $LTiempoFinal = trim($_POST["LTiempoFinal"]);
+    }
+    
+    if (empty(trim($_POST["LResumen"]))) {
+        $LResumen_err = "Resumen de lo que realizo en el trabajo.";
+    } else {
+        $LResumen= trim($_POST["LResumen"]);
+        // echo $LResumen;
+    }
+
+    if (empty(trim($_POST["Lreferencias"]))) {
+        $Lreferencias_err = "Por favor ingrese su referencia dentro de la empresa.";
+    } else {
+        $Lreferencias = trim($_POST["Lreferencias"]);
+        // echo $Lreferencias;
+    }
+
+//datos edit
+    //if (datosLaborales($LEstado, $LNombre, $LArea, $LPuesto, $LTiempoInicial, $LTiempoFinal,$LResumen, $Lreferencias)){
+    //header('Location: ');
+     //}else {
+ 
+        //mostrar mensaje de error 
+          //header('Location: Datoslaborales.html');
+  
+    // }
+     }
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">

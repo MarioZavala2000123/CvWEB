@@ -18,6 +18,7 @@ function Usuario($Correo,$Contraseña){
         mysqli_stmt_bind_param( $stmt, "ss", $Correo,$Contraseña);
 
         if(mysqli_stmt_execute($stmt)){
+            echo "prueba";
             //header("location: Register.html");
             $return = TRUE;
             
@@ -37,5 +38,39 @@ mysqli_stmt_close($stmt);
     return $return;
     }
 
+    echo "no llega a buscar el id";
+    function consultaUsuario($Correo, $Contraseña){
+        $link = mysqli_connect("localhost", "root", "", "prueba");
+        
+        $llamado = "SELECT IdUsuario from Usuario where Correo=? and Contraseña=?";
+        //$stmt = mysqli_prepare($link, $llamado);
+
+        //mysqli_stmt_bind_param( $stmt, "ss", $Correo,$Contraseña);
+        
+        //$result = mysqli_stmt_get_result($stmt);
+
+        //$result = mysqli_stmt_fetch($stmt);
+        echo "entrara a la funcion";
+        if ($sentencia = mysqli_prepare($link, $llamado)) {
+            echo "entro a sesion";
+            mysqli_stmt_bind_param( $sentencia, "ss", $Correo,$Contraseña);
+
+            /* ejecutar la sentencia */
+            mysqli_stmt_execute($sentencia);
+            
+            /* vincular las variables de resultados */
+            mysqli_stmt_bind_result($sentencia, $idUsuario);
+        
+            /* obtener los valores */
+            while (mysqli_stmt_fetch($sentencia)) {
+                printf ("s", $idUsuario);
+            }
+        
+            /* cerrar la sentencia */
+            mysqli_stmt_close($sentencia);
+        }
+
+        return $idUsuario;
+    }
 
 ?>

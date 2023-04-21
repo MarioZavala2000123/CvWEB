@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //  echo $vTelefono;
     } else {
         $vTelefono_err = "La clave al menos debe tener 8 caracteres.";
-        // $vTelefono = trim($_POST["vTelefono"]);
+         $vTelefono = trim($_POST["vTelefono"]);
         //  echo "ELSE vTelefono";
         //  echo $vTelefono;
         // return $vTelefono;
@@ -81,12 +81,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vCorreo;
     }
 
-    if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
-        header('Location: datosAcademicos.html');
-    } else {
+   // if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
+     //   header('Location: ../../../DatosLaborales/Datoslaborales.html');
+    //} else {
         //mostrar mensaje de error 
-        header('Location: datosPersonales.html');
-    }
+       // header('Location: datosPersonales.html');
+    //}
 }
 
 ?>

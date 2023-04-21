@@ -1,5 +1,6 @@
 <?php
 
+require_once("../../../Controlador/Funciones-Conexion/mostrar.php");
 
 ?>
 

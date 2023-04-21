@@ -1,7 +1,7 @@
 <?php
 
 // Tengo que incluir el archivo de otto
-require_once("../../../../Controlador/Funciones-Conexion/GetUsuario.php");
+require_once("../../../Controlador/Funciones-Conexion/GetUsuario.php");
 
 // Proceso de datos cunado se envian
 
@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //Comprobar si el usuario esta vacio
     if(empty(trim($_POST["vCorreoLogin"]))) {
-
         $vCorreoLogin_err = "Porfavor ingrese su Correo";
     
     } else {
@@ -27,15 +26,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vContraseñaLogin;
     }
 
+    $idUsuario = consultaUsuario($vCorreoLogin, $vContraseñaLogin);
 
-    if (GetUsuario($vCorreoLogin, $vContraseñaLogin)){
-        header('Location: Register.html');
-    } else {
+        if ($idUsuario>0){
+        header('Location: ../../../../Modelo/Session/Sesion.php?=' .$idUsuario);
+        //echo $idUsuario;
+        } 
+        else {
         //Mostrar mensaje de error
-        echo "NO SE PUDO INSERTAR EN LA BASE";
-        header('Location: Login.html'); 
+        //echo "no hizo nada";
+        header('Location: Login.html');
+        echo "NO ESTA CARGANDO EL USUARIO";
     }
-
 }
-
 ?>
