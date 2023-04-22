@@ -65,6 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vCorreo;
     }
 
+//$_SESSION["idUsuario"]=14;
     if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
         header('Location: ../DatosLaborales/Datoslaborales.html');
     } else {

@@ -1,7 +1,7 @@
 <?php
 
 // Incluir archivo de configuración Otto
-require_once (".. /.. /.. /Conexion/Funciones/insert.php");
+require_once ("../../../Controlador/Funciones-Conexion/insert-conexion.php");
 
 
 // Procesamiento de datos del formulario cuando se envía el formulario
