@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $vCorreoLogin_err = "Porfavor ingrese su Correo";
     
     } else {
-        $vCorreoLogin = trim($_POST[$vCorreoLogin]);
+        $vCorreoLogin = trim($_POST["vCorreoLogin"]);
         // echo "vCorreoLogin";
         // echo $vCorreoLogin;
     }
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $vContraseñaLogin_err = "Porfavor ingrese su Contraseña";
     
     } else {
-        $vContraseñaLogin = trim($_POST[$vContraseñaLogin]);
+        $vContraseñaLogin = trim($_POST["vContraseñaLogin"]);
         // echo "vContraseñaLogin";
         // echo $vContraseñaLogin;
     }
@@ -29,13 +29,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $idUsuario = consultaUsuario($vCorreoLogin, $vContraseñaLogin);
 
         if ($idUsuario>0){
-        header('Location: ../../../../Modelo/Session/Sesion.php?=' .$idUsuario);
-        //echo $idUsuario;
+        //header('Location: ../../BackEnd/DatosPersona/datosPersonales.html');
+        header('Location: ../../../Modelo/Session/Sesion.php?idUsuario=' . $idUsuario );
+       // echo $idUsuario;
+        
         } 
         else {
         //Mostrar mensaje de error
         //echo "no hizo nada";
-        header('Location: Login.html');
+        //header('Location: Login.html');
         echo "NO ESTA CARGANDO EL USUARIO";
     }
 }

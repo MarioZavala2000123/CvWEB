@@ -1,5 +1,4 @@
 <?php
-
 // Incluir archivo de configuración Otto
 require_once ("../../../Controlador/Funciones-Conexion/insert-conexion.php");
 
@@ -12,65 +11,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $vNombre_err = "Por favor ingrese su nombre.";
     } else {
         $vNombre = trim($_POST["vNombre"]);
-        // echo "vNombre";
-        // echo $vNombre;
     }
 
     if (empty(trim($_POST["vApellido"]))) {
         $vApellido_err = "Por favor ingrese su apellido.";
     } else {
         $vApellido = trim($_POST["vApellido"]);
-        // echo "vApellido";
-        // echo $vApellido;
     }
 
     if (empty(trim($_POST["vDPI"]))) {
         $vDPI_err = "Documento de Identificación.";
     } else {
         $vDPI = trim($_POST["vDPI"]);
-        // echo "vDPI";
-        // echo $vDPI;
     }
 
     if (empty(trim($_POST["vFNacimiento"]))) {
         $vFNacimiento_err = "Fecha de nacimiento.";
     } else {
         $vFNacimiento = trim($_POST["vFNacimiento"]);
-        // echo "vFNacimiento";
-        // echo $vFNacimiento;
     }
 
     if (empty(trim($_POST["vECivil"]))) {
         $vECiviln_err = "Por favor ingrese su estado civil.";
     } else {
         $vECivil = trim($_POST["vECivil"]);
-        // echo "vECivil";
-        // echo $vECivil;
     }
 
     if (empty(trim($_POST["vPresentacion"]))) {
         $vPresentacion_err = "Presentación";
     } else {
         $vPresentacion = trim($_POST["vPresentacion"]);
-        //  echo "vPresentacion";
-        //  echo $vPresentacion;
     }
-
-    if (empty(trim($_POST["vTelefono"]))) {
-        $vTelefono_err = "Número de teléfono para contacto.";
-
-        //condicion de 8 digitos en telefono, falta mensaje de error
-    } elseif (strlen(trim($_POST["vTelefono"])) == 8) {
+    
+    // Repetir hasta que el campo "telefono" tenga 8 dígitos
+    while (true) {
+        // Validar si el campo "telefono" tiene exactamente 8 dígitos
+        if (preg_match('/^\d{8}$/', $_POST["vTelefono"])) {
+        // Si el campo "telefono" tiene 8 dígitos, salir del ciclo
         $vTelefono = trim($_POST["vTelefono"]);
-        // $vTelefono_err = "La clave al menos debe tener 6 caracteres.";
-        // echo "ELSEIF vTelefono";
-        //  echo $vTelefono;
-    } else {
-        $vTelefono_err = "La clave al menos debe tener 8 caracteres.";
-         $vTelefono = trim($_POST["vTelefono"]);
-        //  echo "ELSE vTelefono";
-        //  echo $vTelefono;
-        // return $vTelefono;
+        break;
+        } else {
+        // Si el campo "telefono" no tiene 8 dígitos, mostrar alerta y volver al formulario
+        echo "<script>alert('Ingrese un número teléfonico valido, debe de tener 8 digitos'); window.history.back();</script>";
+        exit();
+        }
     }
 
     if (empty(trim($_POST["vCorreo"]))) {
@@ -81,12 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // echo $vCorreo;
     }
 
-   // if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
-     //   header('Location: ../../../DatosLaborales/Datoslaborales.html');
-    //} else {
-        //mostrar mensaje de error 
+    if (datosPersonales($vNombre, $vApellido, $vFNacimiento, $vDPI, $vECivil, $vPresentacion, $vTelefono, $vCorreo)) {
+        header('Location: ../DatosLaborales/Datoslaborales.html');
+    } else {
        // header('Location: datosPersonales.html');
-    //}
+    }
 }
-
 ?>

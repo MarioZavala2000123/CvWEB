@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../../Controlador/Funciones-Conexion/mostrar.php");
+require_once("../../Controlador/Funciones-Conexion/insert-conexion.php");
 
 ?>
 
@@ -18,17 +18,13 @@ require_once("../../../Controlador/Funciones-Conexion/mostrar.php");
 				<a href="javascript:window.print()"><button class="imprimir">Imprimir</button></a>
 			</div>
 			
-			<div>
-  			
+			<div  class="desplegable">  			
 				<button class="imprimir" >Editar</button>
-				<div>
-
-					<a class"links" href="../BackEnd/DatosPersona/datosPersonalesEdit.php">Datos Personales</a>
-					<a class"links" href="#">Datos Academicos</a>
-					<a class"links" href="#">Datos Laborales</a>
-
+				<div class="Links1">
+					<a href="../BackEnd/DatosPersona/datosPersonalesEdit.php">Datos Personales</a>
+					<a href="#">Datos Academicos</a>
+					<a href="#">Datos Laborales</a>
 				</div>
-
 			</div>
 
 		</header>
@@ -148,15 +144,17 @@ require_once("../../../Controlador/Funciones-Conexion/mostrar.php");
 				?>
 
 				<?php
-				while ($idLaboral <= $i){
+				while ($i < count($idPersona)){
 				?>
 					<tr>
 					<td><?php echo $mostrar[$i++] ["nombreEmpresa"]?></td>
-					<td><?php echo $mostrar["tiempoLaboral"]?></td>
-					<td><?php echo $mostrar["areaLaboral"]?></td>
-					<td><?php echo $mostrar["descripcionLaboral"]?></td>
-					<td><?php echo $mostrar["puestoLaboral"]?></td>
-					<td><?php echo $mostrar["referenciaLaboral"]?></td>
+					<td><?php echo $mostrar["estado"]?></td>
+					<td><?php echo $mostrar["puesto"]?></td>
+					<td><?php echo $mostrar["area"]?></td>
+					<td><?php echo $mostrar["tiempoInicial"]?></td>
+					<td><?php echo $mostrar["tiempoFinal"]?></td>
+					<td><?php echo $mostrar["referencia"]?></td>
+					<td><?php echo $mostrar["resu"]?></td>
 					</tr>
 				<?php	
 				}

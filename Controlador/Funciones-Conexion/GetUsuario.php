@@ -32,8 +32,7 @@ mysqli_stmt_close($stmt);
         // Si mysqli_prepare() devuelve false, se ha producido un error
     echo "Error al preparar la consulta: " . mysqli_error($link);
 
-    die();
-    }
+    die(); }
     mysqli_close($link);
     return $return;
     }
@@ -43,14 +42,8 @@ mysqli_stmt_close($stmt);
         $link = mysqli_connect("localhost", "root", "", "prueba");
         
         $llamado = "SELECT IdUsuario from Usuario where Correo=? and Contraseña=?";
-        //$stmt = mysqli_prepare($link, $llamado);
-
-        //mysqli_stmt_bind_param( $stmt, "ss", $Correo,$Contraseña);
-        
-        //$result = mysqli_stmt_get_result($stmt);
-
-        //$result = mysqli_stmt_fetch($stmt);
-        echo "entrara a la funcion";
+    
+        echo "------entrara a la funcion--------";
         if ($sentencia = mysqli_prepare($link, $llamado)) {
             echo "entro a sesion";
             mysqli_stmt_bind_param( $sentencia, "ss", $Correo,$Contraseña);
@@ -72,5 +65,12 @@ mysqli_stmt_close($stmt);
 
         return $idUsuario;
     }
+ //$stmt = mysqli_prepare($link, $llamado);
 
+//mysqli_stmt_bind_param( $stmt, "ss", $Correo,$Contraseña);
+
+//$result = mysqli_stmt_get_result($stmt);
+
+//$result = mysqli_stmt_fetch($stmt);
 ?>
+

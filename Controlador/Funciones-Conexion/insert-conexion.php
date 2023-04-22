@@ -1,13 +1,21 @@
 <?php
+
 //require_once "configs.php";
 //FUNCION PARA DATOS PERSONALES
 function datosPersonales($nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$presentacion,$telefono,$correo){
     $link = mysqli_connect("localhost", "root", "", "prueba");
 
+    if(isset($_SESSION['idUsuario'])){
     if(!mysqli_connect_errno()){
-        $idUsuario=$_SESSION["idUsuario"]; //son corchetes 
+
+        $idUsuario=$_SESSION['idUsuario']; //son corchetes 
 
             $insertar = "INSERT INTO datosPersonales(idUsuario,nombre,apellido,fecha_Nacimiento,dpi,estadoCivil,presentacion,telefono,correo) VALUES (?,?,?,?,?,?,?,?,?)";
+            
+            session_start();
+            $_SESSION['idUsuario'] = $insertar;
+            
+
             $stmt = mysqli_prepare($link, $insertar);   
             
                 mysqli_stmt_bind_param($stmt, "isssissis",$idUsuario,$nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$presentacion,$telefono,$correo);
@@ -31,7 +39,10 @@ function datosPersonales($nombre,$apellido,$fecha_Nacimiento,$dpi,$estadoCivil,$
     die();
     }
     mysqli_close($link);
-    return $return;
+    return $return;}
+    else{
+         echo "debe estar la variable definida";
+    }
 
 }
 
