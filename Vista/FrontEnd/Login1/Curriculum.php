@@ -2,6 +2,11 @@
 
 require_once("../../Controlador/Funciones-Conexion/insert-conexion.php");
 
+if (isset($_GET['idUsuario'])) {
+    //recuperar los datos que se encuentran en cada uno de los imputs
+    $idUsuario= $_GET['idUsuario'];
+}
+
 ?>
 
 <html>
